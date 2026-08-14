@@ -1,0 +1,21 @@
+{
+  "name": "taskflow-server",
+  "version": "1.0.0",
+  "description": "TaskFlow backend - Express + SQLite REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "db:setup": "node -e \"const {createConnection, initializeSchema} = require('./src/db/database'); const db = createConnection(); initializeSchema(db); db.close(); console.log('Schema initialized.');\"",
+    "db:seed": "node database/seed.js",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
